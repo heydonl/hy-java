@@ -1,37 +1,36 @@
 package util.collection.list.impl;
 
-import com.google.common.collect.ImmutableList;
-import jdk.nashorn.internal.ir.annotations.Immutable;
-import util.collection.HyIterator;
-import util.collection.list.HyImmutableList;
+import util.collection.HyMutableIterator;
 import util.collection.list.HyMutableList;
 
-class HyArrayList<E> implements HyImmutableList<E>, HyMutableList<E> {
+public class HyMutableArrayList<E> implements HyMutableList<E> {
     private static final int DEFAULT_SIZE = 32;
     private final Object[] elementData;
 
-    public HyArrayList(){
+    public HyMutableArrayList() {
         this.elementData = new Object[DEFAULT_SIZE];
     }
 
-    public HyArrayList(int size){
-        if (size == 0){
+    public HyMutableArrayList(int size) {
+        if (size == 0) {
             throw new IllegalArgumentException("size can not be 0");
         }
         this.elementData = new Object[size];
     }
 
-    public HyArrayList(E... elements){
-        if (elements.length == 0){
-            throw new IllegalArgumentException("elementData can not be 0");
+    public HyMutableArrayList(E... elements) {
+        if (elements.length == 0) {
+            throw new IllegalArgumentException("element data size can not be 0");
         }
         this.elementData = new Object[DEFAULT_SIZE];
-        for(E element:elements){
+        for (E element : elements) {
             add(element);
         }
     }
+
     @Override
     public E get(int index) {
+
         return null;
     }
 
@@ -45,4 +44,8 @@ class HyArrayList<E> implements HyImmutableList<E>, HyMutableList<E> {
         return null;
     }
 
+    @Override
+    public HyMutableIterator<E> getIterator() {
+        return null;
+    }
 }
