@@ -1,6 +1,6 @@
 package util.collection;
 
-public interface HyImmutableIterator<E> extends HyIterator<E>{
+public interface HyIterator<E> extends HyReadOnlyIterator<E>{
     boolean hasNext();
     E getNext();
     void remove();

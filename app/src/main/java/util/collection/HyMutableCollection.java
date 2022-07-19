@@ -1,9 +1,9 @@
 package util.collection;
 
-public interface HyMutableCollection<E> extends HyReadOnlyCollection<E> {
-    E add(E data);
+public interface HyMutableCollection<E> extends HyCollection<E> {
+    HyMutableCollection<E> add(E element);
 
-    E remove(E data);
+    HyMutableCollection<E> remove(E element);
 
     HyMutableIterator<E> getIterator();
 }
